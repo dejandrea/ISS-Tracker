@@ -69,15 +69,15 @@ export default class MeteorScreen extends React.Component {
             <View>
               <Text style={[styles.cardTitle, { marginTop: 400, marginLeft: 50 }]}>{item.name}</Text>
 
-              <Text style={[styles.cardText, { marginTop: 20, marginLeft: 50 }]}>Mais Próximo da Terra - {item.close_approach_data[0].close_approach_date_full}</Text>
+              <Text style={[styles.cardText, { marginTop: 20}]}>Closest to Earth - {item.close_approach_data[0].close_approach_date_full}</Text>
 
-              <Text style={[styles.cardText, { marginTop: 5, marginLeft: 50 }]}>Diâmetro Mínimo (KM) - {item.estimated_diameter.kilometers.estimated_diameter_min}</Text>
+              <Text style={styles.cardText}>Minimum Diameter (KM) - {item.estimated_diameter.kilometers.estimated_diameter_min}</Text>
 
-              <Text style={[styles.cardText, { marginTop: 5, marginLeft: 50 }]}>Diâmetro Máximo (KM) - {item.estimated_diameter.kilometers.estimated_diameter_max}</Text>
+              <Text style={styles.cardText}>Maximum Diameter (KM) - {item.estimated_diameter.kilometers.estimated_diameter_max}</Text>
 
-              <Text style={[styles.cardText, { marginTop: 5, marginLeft: 50 }]}>Velocidade (KM/H) - {item.close_approach_data[0].relative_velocity.kilometers_per_hour}</Text>
+              <Text style={styles.cardText}>Velocity (KM/H) - {item.close_approach_data[0].relative_velocity.kilometers_per_hour}</Text>
               
-              <Text style={[styles.cardText, { marginTop: 5, marginLeft: 50 }]}>Distância da Terra (KM) - {item.close_approach_data[0].miss_distance.kilometers}</Text>
+              <Text style={styles.cardText}>Distance From Earth (KM) - {item.close_approach_data[0].miss_distance.kilometers}</Text>
             </View>
 
           </View>
@@ -150,7 +150,9 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "white"
+    color: "white",
+    marginTop: 5,
+    marginLeft: 50
   },
   meteorContainer: {
     flex: 0.85
